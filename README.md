@@ -1,1 +1,1 @@
-# UBC-MDS-DSCI524-iflores-stse-hboyce
+#DSCI524-python-iflores-stse-hboyce
