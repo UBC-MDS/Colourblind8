@@ -1,6 +1,6 @@
-# DSCI-524-python-iflores-stse-hboyce
+# DSCI-524-Colourblind8
 
-a python package for DSCI 524
+A Python package for DSCI 524
 
 ### Authors
 
