@@ -14,7 +14,12 @@ A Python package for DSCI 524
 
 ### Functions Included In This Package
 
-
+- `set_deutera()`:
+  - This function implements a theme that makes plots accesible to people with deuteranopia. It modifies the colour of geometric objects (points, lines, etc) and the layout of the plot.
+- `set_prota()`
+  - This function implements a theme that makes plots accesible to people with protanopia. It modifies the colour of geometric objects (points, lines, etc) and the layout of the plot.
+- `set_trita()`
+  - This function implements a theme that makes plots accesible to people with tritanopia. It modifies the colour of geometric objects (points, lines, etc) and the layout of the plot.
 
 ### Our Package in the Python Ecosystem 
 
