@@ -29,9 +29,6 @@ At this stage, Colourblind8 will focus on developing settings for the three most
 - `set_trita()`
   - This function implements a theme that makes plots accesible to people with tritanopia. It modifies the colour of geometric objects (points, lines, etc) and the layout of the plot.
 
-
-
-
 ### Our Package in the Python Ecosystem 
 
 
