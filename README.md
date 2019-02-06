@@ -30,7 +30,9 @@ At this stage, Colourblind8 will focus on developing settings for the three most
 
 ### Our Package in the Python Ecosystem 
 
+To the best of our knowledge, there is currently no other colourblind specific package available for matplotlib that offers colourblind-friendly palettes or themes. Seaborn, in conjunction with matplotlib, offers a single default colour palette ([source](https://seaborn.pydata.org/tutorial/color_palettes.html)) named `colorblind` for general readers with colourblindness. But it is not customized to accommodate different types of colourblind.
 
+`Colourblind8` will bridge the gap as it attempts to fit into the Python ecosystem by offering a convenient and effective way to give all matplotlib visualizations a theme and fully inclusive colour palette.  A package that shows a similar contribution to the python ecosystem as `Colourblind8` is [daltonize](https://github.com/joergdietrich/daltonize). This package aids to creating all images colourblind friendly as opposed to Colourblind8 which with make data visualizations, plots and graphs fully inclusive for all readers.
 
 
 ### Appendix
