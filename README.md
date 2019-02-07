@@ -2,7 +2,7 @@
 
 <img src="/img/CB8new.png" width="200">
 
-A Python package for DSCI 524
+A python package that creates colourblind friendly themes.
 
 ### Authors
 
