@@ -1,5 +1,7 @@
 # DSCI-524-Colourblind8
 
+<img src="/img/CB8new.png" width="200">
+
 A Python package for DSCI 524
 
 ### Authors
