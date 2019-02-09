@@ -2,6 +2,9 @@ import pytest
 import matplotlib.pyplot as plt
 import numpy as np
 
+# The following tests work for all three themes as these tests are scanning through the elements within the themes
+# but the framework of three themes remain the same.
+
 # Creating random data for test plot 
 N = 500
 x = np.random.rand(N)
