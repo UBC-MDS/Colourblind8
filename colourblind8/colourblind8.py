@@ -7,11 +7,11 @@ class Colourblind8:
     def set_deutera(self,plot):
         '''
         A function that converts a matplotlib plot to a Deuteranopia friendly palette
-        and theme
+        and theme with more readable font size and theme design
 
         inputs
         ------
-        plot:  a  matplotlib figure that needs formatting
+        plot:  a  matplotlib figure that needs reformatting
 
         outputs:
         --------
@@ -25,11 +25,11 @@ class Colourblind8:
     def set_prota(self,plot):
        '''
         A function that converts a matplotlib plot to a Protanopia friendly palette
-        and theme
+        and theme with more readable font size and theme design
 
         inputs
         ------
-        plot:  a  matplotlib figure that needs formatting
+        plot:  a  matplotlib figure that needs reformatting
 
         outputs:
         --------
@@ -43,11 +43,11 @@ class Colourblind8:
        def set_trita(self,plot):
        '''
         A function that converts a matplotlib plot to a Tritanopia friendly palette
-        and theme
+        and theme with more readable font size and theme design
 
         inputs
         ------
-        plot: a  matplotlib figure that needs formatting
+        plot: a  matplotlib figure that needs reformatting
 
         outputs:
         --------
