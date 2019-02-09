@@ -1,6 +1,7 @@
-# DSCI-524-Colourblind8
 
-<img src="/img/CB8new.png" width="200">
+<img src="/img/CB8new.png" width="200" align = "right">
+
+# Colourblind8
 
 A python package that creates colourblind friendly themes.
 
