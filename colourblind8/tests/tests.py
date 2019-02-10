@@ -34,24 +34,70 @@ plt.close()
 
 
 
+def test_facecolor():
+    ''' A function that checks the face colour of the plot background  '''
+    
+    assert plt.rcParams['axes.facecolor'] == "white"  
 
-# Successes expected 
-assert plt.rcParams['axes.facecolor'] == "white" # Checks that the face colour is white  
-assert plt.rcParams['axes.titlesize'] == 20 # Checks the title font size
-assert plt.rcParams['legend.fontsize'] == 12 # Checks the legend font size of points 
-assert plt.rcParams["legend.facecolor"] == "white" # Checks the legend face colour 
-assert plt.rcParams["figure.facecolor"] == "green" # Checks the surrounding plot colour
-assert plt.rcParams["axes.labelsize"] == 20 # Checks the axis label size 
-assert plt.rcParams["scatter.marker"] == "*" #Check the shape of the scatter points 
-assert plt.rcParams["lines.color"] == "red"
 
-# Fails expected 
-assert plt.rcParams['axes.edgecolor'] == "blue" # Checks that the face colour is white  
-assert plt.rcParams['axes.titlesize'] == 18 # Checks the title font size
-assert plt.rcParams['axes.labelsize'] == 1 # Checks the graph title font size
-assert plt.rcParams["legend.title_fontsize"] == 45 #Checks the title font size of legend 
+def test_title_size():
+    '''A function that checks that the title font size of a graph '''
+    
+    assert plt.rcParams['axes.titlesize'] == 20 
 
     
+def test_legend_fontsize():    
+    ''''A function that checks that the font size of the legend title of a graph  '''
+    
+    assert plt.rcParams['legend.fontsize'] == 12 
+
+    
+def test_legend_facecolor():   
+    ''' 'A function that checks the legend face colour of a graph '''
+    
+    assert plt.rcParams["legend.facecolor"] == "white"  
+
+    
+def test_figure_facecolor():    
+    ''' A function that checks the plot's surrounding colour of a graph ''' 
+    
+    assert plt.rcParams["figure.facecolor"] == "green" 
+
+    
+def test_axes_labelsize():    
+    ''' A function that checks the label fond size of the axis titles'''
+    
+    assert plt.rcParams["axes.labelsize"] == 20 
 
 
+def test_scatter_marker():    
+    '''A function that checks the shape of the scatter points '''
+    
+    assert plt.rcParams["scatter.marker"] == "*"  
+
+
+# Fails expected 
+
+
+def test_axes_edgecolor():    
+    ''' A function that checks the edge colours of the axis  '''
+    
+    assert plt.rcParams['axes.edgecolor'] == "blue"  
+  
+    
+def test_legend_fontsize_neg():    
+    ''' A function that tests the label font size of the axis titles, that should fail''' 
+    
+    assert plt.rcParams['axes.labelsize'] == 1 
+
+
+def test_legend_title_fontsize():    
+    ''' A test that checks the title font size of legend '''
+    
+    assert plt.rcParams["legend.title_fontsize"] == 45 
+    
+def test_title_size_neg():
+    '''A test that checks that the title font size of a graph, that should fail  '''
+     
+    assert plt.rcParams['axes.titlesize'] == 18 
 
