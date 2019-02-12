@@ -29,6 +29,21 @@ At this stage, `Colourblind8` will focus on developing settings for the three mo
   - This function implements a theme that makes plots accesible to people with protanopia. It modifies the colour of geometric objects (points, lines, etc) and the layout of the plot.
 - `set_trita()`
   - This function implements a theme that makes plots accesible to people with tritanopia. It modifies the colour of geometric objects (points, lines, etc) and the layout of the plot.
+  
+  
+### Installation 
+
+
+To install `Colourblind8`, please input the following into the Terminal:
+
+```pip install git+https://github.com/UBC-MDS/Colourblind8.git```
+
+
+### Usage 
+
+#### Function example 
+
+
 
 ### Our Package in the Python Ecosystem 
 
