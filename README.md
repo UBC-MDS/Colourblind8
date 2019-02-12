@@ -34,7 +34,7 @@ At this stage, `Colourblind8` will focus on developing settings for the three mo
 ### Installation 
 
 
-To install `Colourblind8`, please input the following into the Terminal:
+To install `Colourblind8` via pip, please input the following into the Terminal:
 
 ```pip install git+https://github.com/UBC-MDS/Colourblind8.git```
 
