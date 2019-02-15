@@ -20,7 +20,7 @@ class Colourblind8:
         plt.rcParams["figure.facecolor"] = "white"
         plt.rcParams["axes.labelsize"] = 16
 
-    def plot_scatter(self, x, y, labels = None, palette = None,
+    def plot_scatter(self, x, y, alpha = 1,  labels = None, palette = None,
                 title = None, x_lab = None, y_lab = None, legend_title = None):
 
         # Checks colour palette
@@ -38,12 +38,14 @@ class Colourblind8:
                 ax.scatter(x,
                           values,
                           color = colours[idx],
+                          alpha = alpha,
                           label = labels[idx])
         else:
             for idx, values in enumerate(y):
                 ax.scatter(x,
                            values,
-                           color = colours[idx])
+                           color = colours[idx],
+                           alpha = alpha)
 
         if title:
             ax.set_title(title)
