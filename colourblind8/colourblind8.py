@@ -1,61 +1,59 @@
 class Colourblind8:
-    def __ini__(self):
-        '''This is the Constructor of the class'''
+
+    def __init__(self):
+        self.deutera_colours =  ['#666E95', '#FFC13D', '#2F86E5', '#ACA6C3', '#483E3C',
+                                 '#E8C6BA', '#867065', '#005186', '#B0860F', '#FFD9B0']
 
 
+        self.prota_colours = ['#7D7C01', '#59709E', '#4C5631', '#3F59E8', '#BDBB64',
+                              '#35A9E0', '#E8E602', '#C1C1C7', '#0E1079']
 
-    def set_deutera(self,plot):
-        '''
-        A function that converts a matplotlib plot to a Deuteranopia friendly palette
-        and theme with more readable font size and theme design
+        self.trita_colours = ['#5F727A', '#FFB7C2', '#01919A', '#A8A8B4', '#BDE6F4',
+                              '#4A3F45', '#B77B87', '#00585C', '#932929']
 
-        inputs
-        ------
-        plot:  a  matplotlib figure that needs reformatting
+        plt.rcParams['axes.facecolor']= "white"
+        plt.rcParams['axes.titlesize'] = 20
+        plt.rcParams['axes.edgecolor'] = "black"
+        plt.rcParams['legend.fontsize'] = 10
+        plt.rcParams["legend.facecolor"] = "white"
+        plt.rcParams["figure.facecolor"] = "white"
+        plt.rcParams["axes.labelsize"] = 16
 
-        outputs:
-        --------
-        new_plot: this is a plot that has been transformed to a Deuteranopia
-                  vision friendly graph, with changes to the background,
-                  gridlines and colour
+    def plot_scatter(self, x, y, labels = None, palette = None,
+                title = None, x_lab = None, y_lab = None, legend_title = None):
 
-        '''
-        return new_plot
+        # Checks colour palette
+        if palette == 'deutera':
+                colours = self.deutera_colours
+        elif palette == 'trita':
+                colours = self.trita_colours
+        elif palette == 'prota':
+                colours = self.prota_colours
 
-    def set_prota(self,plot):
-       '''
-        A function that converts a matplotlib plot to a Protanopia friendly palette
-        and theme with more readable font size and theme design
+        fig, ax = plt.subplots()
 
-        inputs
-        ------
-        plot:  a  matplotlib figure that needs reformatting
+        if labels:
+            for idx, values in enumerate(y):
+                ax.scatter(x,
+                          values,
+                          edgecolor = 'white',
+                          color = colours[idx],
+                          label = labels[idx])
+        else:
+            for idx, values in enumerate(y):
+                ax.scatter(x,
+                           values,
+                           edgecolor = 'white',
+                           color = colours[idx])
 
-        outputs:
-        --------
-        new_plot: this is a plot that has been transformed to a Protanopia
-                  vision friendly graph, with changes to the background,
-                  gridlines, and colour
+        if title:
+            ax.set_title(title)
 
-        '''
-        return new_plot
+        if x_lab:
+            ax.set_xlabel(x_lab)
 
-       def set_trita(self,plot):
-       '''
-        A function that converts a matplotlib plot to a Tritanopia friendly palette
-        and theme with more readable font size and theme design
+        if y_lab:
+            ax.set_ylabel(y_lab)
 
-        inputs
-        ------
-        plot: a  matplotlib figure that needs reformatting
-
-        outputs:
-        --------
-        new_plot: this is a plot that has been transformed to a Tritanopia
-                  vision friendly graph, with changes to the background,
-                  gridlines, and colour
-
-        '''
-        return new_plot
-
-
+        ax.legend(title = legend_title, bbox_to_anchor=(1, 1))
+        return ax
