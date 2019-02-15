@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt
+
 class Colourblind8:
 
     def __init__(self):
@@ -11,7 +13,6 @@ class Colourblind8:
         self.trita_colours = ['#5F727A', '#FFB7C2', '#01919A', '#A8A8B4', '#BDE6F4',
                               '#4A3F45', '#B77B87', '#00585C', '#932929']
 
-        plt.rcParams['axes.facecolor']= "white"
         plt.rcParams['axes.titlesize'] = 20
         plt.rcParams['axes.edgecolor'] = "black"
         plt.rcParams['legend.fontsize'] = 10
@@ -36,14 +37,12 @@ class Colourblind8:
             for idx, values in enumerate(y):
                 ax.scatter(x,
                           values,
-                          edgecolor = 'white',
                           color = colours[idx],
                           label = labels[idx])
         else:
             for idx, values in enumerate(y):
                 ax.scatter(x,
                            values,
-                           edgecolor = 'white',
                            color = colours[idx])
 
         if title:
@@ -55,5 +54,5 @@ class Colourblind8:
         if y_lab:
             ax.set_ylabel(y_lab)
 
-        ax.legend(title = legend_title, bbox_to_anchor=(1, 1))
+        ax.legend(title = legend_title, bbox_to_anchor=(1.01, 1), loc = "upper left")
         return ax
