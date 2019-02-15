@@ -56,3 +56,46 @@ class Colourblind8:
 
         ax.legend(title = legend_title, bbox_to_anchor=(1.01, 1), loc = "upper left")
         return ax
+    
+    def plot_histogram(self, y, alpha = 1.0, labels = None, palette = None, 
+                title = None, x_lab = None, legend_title = None):
+    
+        # Checks colour palette
+        if palette == 'deutera':
+                colours = self.deutera_colours
+        elif palette == 'trita':
+                colours = self.trita_colours
+        elif palette == 'prota':
+                colours = self.prota_colours
+
+        fig, ax = plt.subplots()
+ 
+    
+        if labels:
+            for idx, values in enumerate(y):
+                ax.hist(values,
+                        edgecolor = 'white',
+                        linewidth=1, 
+                        alpha = alpha,
+                        color = colours[idx],
+                        label = labels[idx])
+        else:
+            for idx, values in enumerate(y):
+                ax.hist(x, 
+                           values,
+                           edgecolor = 'white', 
+                           linewidth=1,
+                           alpha = alpha,
+                           color = colours[idx])
+
+        if title:
+                ax.set_title(title)
+
+        if x_lab:
+                ax.set_xlabel(x_lab)
+           
+        ax.set_ylabel("Frequency")
+        ax.legend(title = legend_title, bbox_to_anchor=(1.01, 1),  loc="upper left")
+
+        return ax
+    
