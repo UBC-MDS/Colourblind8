@@ -34,6 +34,7 @@ class Colourblind8:
 	Parameters
 	----------
 
+
 	param1 x (list): a list of numeric values. Applicable to scatterplots and lineplots
 	param2 y (list of lists): up to 9 y variables to plot based on the number of available colours per palette. For one list, please convert it to a list of lists.
 	alpha(float): controling transparency level. Default value=1.0 , it takes any value between 0.0 and 1.0.
@@ -75,6 +76,7 @@ class Colourblind8:
 		plt.rcParams["axes.labelsize"] = 16
 		
 	def plot_lines(self, x, y,alpha=1.0, labels = None, palette = None, 
+
                 title = None, x_lab = None, y_lab = None, legend_title = None):
     
 		"""
@@ -285,3 +287,4 @@ class Colourblind8:
 		ax.set_ylabel("Frequency")
 
 		return ax
+

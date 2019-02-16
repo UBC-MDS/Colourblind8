@@ -14,7 +14,7 @@ A python package that creates colourblind friendly themes.
 
 **Overview**
 
-`Colourblind8` will be a brand new theme package implemented for `matplotlib` to optimize graphs into a format interpretable by people with colourblindness. Colourblindness, also known as colour vision deficiency, is a condition that affects individuals how they perceive colours visually. According to [colourblindawareness.org](http://www.colourblindawareness.org/colour-blindness/), colourblindness affects 1 in every 12 men and 1 in every 200 women globally. The package is inspired by the fact that people without knowledge about this condition don't know how to make their graphs accesible. Our objective is to enhance data visualization by implementing proper colours so that the graphs are perceived correctly by all readers as intended.
+`Colourblind8` will be a brand new plotting package implemented for `matplotlib` to optimize graphs into a format interpretable by people with colourblindness. Colourblindness, also known as colour vision deficiency, is a condition that affects individuals how they perceive colours visually. According to [colourblindawareness.org](http://www.colourblindawareness.org/colour-blindness/), colourblindness affects 1 in every 12 men and 1 in every 200 women globally. The package is inspired by the fact that people without knowledge about this condition don't know how to make their graphs accesible. Our objective is to enhance data visualization by implementing proper colours so that the graphs are perceived correctly by all readers as intended.
 
 **Scope**
 
@@ -23,11 +23,14 @@ At this stage, `Colourblind8` will focus on developing settings for the three mo
 
 ### Functions Included In This Package
 
-- `set_deutera()`:
-  - This function implements a theme that makes plots accesible to people with deuteranopia. It modifies the colour of geometric objects (points, lines, etc) and the layout of the plot.
-- `set_prota()`
+- `plot_lines()`:
+   inputs: x variable,  y variable(s),  labels = None, palette = None, 
+                title = None, x_lab = None, y_lab = None, legend_title = None
+   output: a matplotlib object
+  - This function implements a method that makes line graphs accesible to people with one of these three colourblind variants; deuteranopia, protanopia or tritanopia. It modifies the colour of each line, the title, legend and axes size as well as the face colour.
+- `plot_scatter(()`
   - This function implements a theme that makes plots accesible to people with protanopia. It modifies the colour of geometric objects (points, lines, etc) and the layout of the plot.
-- `set_trita()`
+- `plot_histogram()`
   - This function implements a theme that makes plots accesible to people with tritanopia. It modifies the colour of geometric objects (points, lines, etc) and the layout of the plot.
   
   
