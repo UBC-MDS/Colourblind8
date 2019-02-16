@@ -3,40 +3,43 @@ import matplotlib.pyplot as plt
 class Colourblind8:
 	""" What is Colourblind8?
     
-    Colourblind8 provides an improved version of matplotlib scatterplot,lineplot and histogram through colour and design enhancement 
-    for three types of colourblind conditions - Deuteranopia,Protanopia,Tritanopia.
+    Colourblind8 provides an improved version of matplotlib scatterplot,lineplot and histogram through colour and design enhancement for three types of colourblind conditions -Deuteranopia,Protanopia,Tritanopia.
 
-    Example:
+    Example
+	----------
     
-        Colourblind8.plot_lines(x=x, y=y, alpha=1.0,labels =['a','b','c','d','e','f','g','h','i'], palette = 'deutera', 
-                                title = "My testing", x_lab = "X_test", y_lab = "Y_test", legend_title = "lengendtest");
-    Usage:
+    Colourblind8.plot_lines(x=x, y=y, alpha=1.0,labels =['a','b','c','d','e','f','g','h','i'], palette = 'deutera', title = "My testing", x_lab = "X_test", y_lab = "Y_test", legend_title = "lengendtest");
     
-        - plot selection: 
+	Usage
+	----------
+    - plot selection: 
         
-            Colourblind8.plot_lines()
-            Colourblind8.plot_scatter()
-            Colourblind8.plot_hist()
+		Colourblind8.plot_lines()
+        Colourblind8.plot_scatter()
+        Colourblind8.plot_hist()
     
-        - Colourpalette selection through `palette` argument within `plot()`:
+    - Colourpalette selection through `palette` argument within `plot()`:
     
-            palette=['deutera_colours','prota_colours','trita_colours'] 
+        palette=['deutera_colours','prota_colours','trita_colours'] 
     
-    Args:
-        param1 x (int): a list of numeric values. Applicable to scatterplots and lineplots
-        param2 y (list of lists): up to 9 y variables to plot based on the number of available colours per palette. 
-			For one list, please convert it to a list of lists.  
-        alpha(default value =1.0): transparency level, it takes any value between 0.0 and 1.0.
+   Parameters
+   ----------
+   
+        param1 x (list): a list of numeric values. Applicable to scatterplots and lineplots
+        param2 y (list of lists): up to 9 y variables to plot based on the number of available colours per palette. For one list, please convert it to a list of lists.  
+        alpha(float): controling transparency level. Default value=1.0 , it takes any value between 0.0 and 1.0.
         labels : Optional. Labels for each object within the graph.
         palette (one palette): 'deutera_colours', 'prota_colours','trita_colours'
         title: Optional. Title for the plot
         x_lab: Optional. Label for x axis
-        y_lab: Optional. Label for y axis
+        y_lab: Optional. Label for y axis. Not applicable to histogram.
         legend_title: Optional. Legend title for legend.
 
-    Returns:
-	
-		an enhanced version of matplotlib plot.
+	Returns
+	-------
+	plt
+   
+	an enhanced version of matplotlib plot is returned
 	
     """
 	
@@ -67,14 +70,16 @@ class Colourblind8:
                 title = None, x_lab = None, y_lab = None, legend_title = None):
     
         """
-        Colourblind8.plot_lines() produces a matplotlib linechart for x and y variables. It takes y variable only in a list of lists format, up to 9 lists within a               list for plotting. Each line will be presented by one colour of the palette. *** For one list, please convert it to a list of a list. 
+        Colourblind8.plot_lines() produces a matplotlib linechart for x and y variables. It takes y variable only in a list of lists format, up to 9 lists within a list for plotting. Each line will be presented by one colour of the palette. *** For one list, please convert it to a list of a list. 
         
-        Example:
+        Example
+		----------
     
             Colourblind8.plot_lines(x=x, y=y, alpha=0.5,labels =['a','b','c','d','e','f','g','h','i'], palette = 'deutera', 
                                 title = "My testing", x_lab = "X_test", y_lab = "Y_test", legend_title = "lengendtest")
-    
-        Args:
+		
+		Parameters
+        ----------
             param1 x : a list of numeric values
             param2 y (list of lists): up to 9 y variables to plot based on the number of available colours per palette. 
 				For one list, please convert it to a list of a list.  
@@ -86,9 +91,11 @@ class Colourblind8:
             y_lab: Optional. Label for y axis
             legend_title: Optional. Legend title for legend.
 
-        Returns:
-            an enhanced version of matplotlib lineplot.
-            
+		Returns
+		-------
+		plt
+   
+		an enhanced version of matplotlib lineplot is returned
         """
     
         # Checks which colour palette is selected
@@ -135,14 +142,16 @@ class Colourblind8:
                 title = None, x_lab = None, y_lab = None, legend_title = None):
 
 		"""
-        Colourblind8.plot_scatter () produces a matplotlib scatterplot for x and y variables. It takes y variable only in a list of lists format, up to 9 lists             within a list for plotting. Each scatter group will be presented by one colour of the palette. *** For one list, please convert it to a list of a list.
+        Colourblind8.plot_scatter () produces a matplotlib scatterplot for x and y variables. It takes y variable only in a list of lists format, up to 9 lists within a list for plotting. Each scatter group will be presented by one colour of the palette. *** For one list, please convert it to a list of a list.
         
-        Example:
+        Example
+		---------
     
             Colourblind8.plot_scatter(x=x, y=y, alpha=0.5,labels =['a','b','c','d','e','f','g','h','i'], palette = 'deutera', 
                                 title = "My testing", x_lab = "X_test", y_lab = "Y_test", legend_title = "lengendtest")
     
-        Args:
+        Parameters
+		---------
             param1 x : a list of numeric values
             param2 y (list of lists): up to 9 y variables to plot based on the number of available colours per palette. 
 				For one list, please convert it to a list of a list.  
@@ -154,9 +163,11 @@ class Colourblind8:
             y_lab: Optional. Label for y axis
             legend_title: Optional. Legend title for legend.
 
-        Returns:
-            an enhanced version of matplotlib scatterplot.
-            
+		Returns
+		-------
+		plt
+   
+		an enhanced version of matplotlib scatterplot is returned
         """
 		
         # Checks which colour palette is selected
@@ -203,24 +214,28 @@ class Colourblind8:
 		"""
         Colourblind8.plot_histogram() produces a matplotlib histogram for a list of lists. It takes a variable - parameter y- up to 9 lists within a list for plotting. Each histogram layer will be presented by one colour of the palette. *** For one list, please convert it to a list of a list.
         
-        Example:
+        Example
+		---------
     
             Colourblind8.plot_histogram(y=y, alpha=0.5,labels =['a','b','c','d','e','f','g','h','i'], palette = 'deutera', 
                                 title = "My testing", x_lab = "X_test", y_lab = "Y_test", legend_title = "lengendtest")
     
-        Args:
+        Paramaters
+		---------
             param1 y (a list of lists): up to 9 y variables to plot based on the number of available colours per palette. 
 				For one list, please convert it to a list of a list.  
             alpha(default value=1.0): transparency level, it takes any value between 0.0 and 1.0 
             labels : Optional. Labels for each object within the graph.
             palette (one palette): 'deutera_colours', 'prota_colours','trita_colours'
             title: Optional. Title for the plot
-            x_lab: Optional. Label for x axis
-            y_lab: Optional. Label for y axis
+            x_lab: Optional. Label for horizontal axis
             legend_title: Optional. Legend title for legend.
 
-        Returns:
-            an enhanced version of matplotlib histogram.
+        Returns
+		---------
+        plt
+   
+		an enhanced version of matplotlib histogram is returned
             
         """
     
