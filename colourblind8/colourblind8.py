@@ -1,9 +1,3 @@
-
-# coding: utf-8
-
-# In[ ]:
-
-
 import matplotlib.pyplot as plt
 
 
@@ -264,7 +258,7 @@ class Colourblind8:
 		if bins:
 			if labels:
 				for idx, values in enumerate(y):
-					ax.hist(values,
+					values.hist(ax=ax,
 					        edgecolor = 'white',
 					        linewidth=1,
 					        alpha = alpha,
@@ -274,8 +268,7 @@ class Colourblind8:
 				ax.legend(title = legend_title, bbox_to_anchor=(1.01, 1))
 			else:
 				for idx, values in enumerate(y):
-					ax.hist(x,
-					           values,
+					values.hist(ax = ax,
 					           edgecolor = 'white',
 					           linewidth=1,
 					           alpha = alpha,
@@ -284,7 +277,7 @@ class Colourblind8:
 		else:
 			if labels:
 				for idx, values in enumerate(y):
-					ax.hist(values,
+					values.hist(ax = ax,
 					        edgecolor = 'white',
 					        linewidth=1,
 					        alpha = alpha,
@@ -293,12 +286,13 @@ class Colourblind8:
 				ax.legend(title = legend_title, bbox_to_anchor=(1.01, 1))
 			else:
 				for idx, values in enumerate(y):
-					ax.hist(x,
-					           values,
+					values.hist(ax= ax,
 					           edgecolor = 'white',
 					           linewidth=1,
 					           alpha = alpha,
 					           color = colours[idx])
+                    
+                    
 		# if the following parameters are entered, Colourblind8 will apply the theme
 		if title:
 			ax.legend(title = legend_title, bbox_to_anchor=(1.01, 1),  loc="upper left")
