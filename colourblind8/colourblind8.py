@@ -23,7 +23,7 @@ class Colourblind8:
             palette=['deutera_colours','prota_colours','trita_colours'] 
     
     Args:
-        param1 x (int): applicable to scatterplots and lineplots
+        param1 x (int): a list of numeric values. Applicable to scatterplots and lineplots
         param2 y (list of lists): up to 9 y variables to plot based on the number of available colours per palette. 
 			For one list, please convert it to a list of lists.  
         alpha(default value =1.0): transparency level, it takes any value between 0.0 and 1.0.
@@ -71,11 +71,11 @@ class Colourblind8:
         
         Example:
     
-            Colourblind8.plot_lines(x=x, y=y, labels =['a','b','c','d','e','f','g','h','i'], palette = 'deutera', 
+            Colourblind8.plot_lines(x=x, y=y, alpha=0.5,labels =['a','b','c','d','e','f','g','h','i'], palette = 'deutera', 
                                 title = "My testing", x_lab = "X_test", y_lab = "Y_test", legend_title = "lengendtest")
     
         Args:
-            param1 x (int): applicable to scatterplots and lineplots
+            param1 x : a list of numeric values
             param2 y (list of lists): up to 9 y variables to plot based on the number of available colours per palette. 
 				For one list, please convert it to a list of a list.  
             alpha(default value =1.0): transparency level, it takes any value between 0.0 and 1.0
@@ -143,7 +143,7 @@ class Colourblind8:
                                 title = "My testing", x_lab = "X_test", y_lab = "Y_test", legend_title = "lengendtest")
     
         Args:
-            param1 x (int): applicable to scatterplots and lineplots
+            param1 x : a list of numeric values
             param2 y (list of lists): up to 9 y variables to plot based on the number of available colours per palette. 
 				For one list, please convert it to a list of a list.  
             alpha(default value=1.0): transparency level, it takes any value between 0.0 and 1.0 
@@ -155,11 +155,12 @@ class Colourblind8:
             legend_title: Optional. Legend title for legend.
 
         Returns:
-            an enhanced version of matplotlib lineplot.
+            an enhanced version of matplotlib scatterplot.
             
         """
 		
-        # Checks colour palette
+        # Checks which colour palette is selected
+		
         if palette == 'deutera':
                 colours = self.deutera_colours
         elif palette == 'trita':
@@ -168,6 +169,8 @@ class Colourblind8:
                 colours = self.prota_colours
 
         fig, ax = plt.subplots()
+		
+		# Go through y variables and apply colours accordingly
 
         if labels:
             for idx, values in enumerate(y):
@@ -183,7 +186,7 @@ class Colourblind8:
                            values,
                            color = colours[idx],
                            alpha = alpha)
-
+		# if the following parameters are entered, Colourblind8 will apply the theme
         if title:
             ax.set_title(title)
 
@@ -197,6 +200,29 @@ class Colourblind8:
     
     def plot_histogram(self, y, alpha = 1.0, labels = None, palette = None, 
                 title = None, x_lab = None, legend_title = None):
+		"""
+        Colourblind8.plot_histogram() produces a matplotlib histogram for a list of lists. It takes a variable - parameter y- up to 9 lists within a list for plotting. Each histogram layer will be presented by one colour of the palette. *** For one list, please convert it to a list of a list.
+        
+        Example:
+    
+            Colourblind8.plot_histogram(y=y, alpha=0.5,labels =['a','b','c','d','e','f','g','h','i'], palette = 'deutera', 
+                                title = "My testing", x_lab = "X_test", y_lab = "Y_test", legend_title = "lengendtest")
+    
+        Args:
+            param1 y (a list of lists): up to 9 y variables to plot based on the number of available colours per palette. 
+				For one list, please convert it to a list of a list.  
+            alpha(default value=1.0): transparency level, it takes any value between 0.0 and 1.0 
+            labels : Optional. Labels for each object within the graph.
+            palette (one palette): 'deutera_colours', 'prota_colours','trita_colours'
+            title: Optional. Title for the plot
+            x_lab: Optional. Label for x axis
+            y_lab: Optional. Label for y axis
+            legend_title: Optional. Legend title for legend.
+
+        Returns:
+            an enhanced version of matplotlib histogram.
+            
+        """
     
         # Checks colour palette
         if palette == 'deutera':
@@ -208,7 +234,7 @@ class Colourblind8:
 
         fig, ax = plt.subplots()
  
-    
+		# Go through y variables and apply colours accordingly
         if labels:
             for idx, values in enumerate(y):
                 ax.hist(values,
@@ -226,7 +252,7 @@ class Colourblind8:
                            linewidth=1,
                            alpha = alpha,
                            color = colours[idx])
-
+		# if the following parameters are entered, Colourblind8 will apply the theme
         if title:
 			ax.legend(title = legend_title, bbox_to_anchor=(1.01, 1),  loc="upper left")
             ax.set_title(title)
@@ -237,4 +263,3 @@ class Colourblind8:
         ax.set_ylabel("Frequency")
 
         return ax
-    
