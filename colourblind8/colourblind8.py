@@ -246,7 +246,7 @@ class Colourblind8:
 
 				stored_max=[]
 				stored_min=[]
-				for j in y_list:
+				for j in y:
 					stored_max.append(max(j))
 					stored_min.append(min(j))
 
