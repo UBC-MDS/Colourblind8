@@ -25,29 +25,26 @@ At this stage, `Colourblind8` will focus on developing settings for the three mo
 
 - `plot_lines()`:
 
-  - This function implements a method that makes line graphs accesible to people with one of these three colourblind variants; deuteranopia, protanopia or tritanopia. It modifies the colour of each line, the title, legend and axes size as well as the face colour.
+  - This function implements a method that makes line graphs accesible to people with one of these three colourblind variants; deuteranopia, protanopia or tritanopia. It modifies the colour of each line, the title, transparency of the objects, legend and axes size as well as the face colour.
 
-   inputs: x variable,  y variable (a list of lists),  labels of each y variable, palette colour, 
-                title, x labels, y labels and legend title. 
-   output: a matplotlib object
+   **inputs:** x variable,  y variable (a list of lists), transparency, labels of each y variable, palette colour, title, x labels, y labels and legend title.    
+   **output:** a matplotlib object  
 
 
 - `plot_scatter()`:
 
   - This function implements a method that makes scatterplots accesible to people with one of these three colourblind variants; deuteranopia, protanopia or tritanopia. It modifies the colour of each line, the title, legend and axes size, transparancy of the objects, as well as the face colour.
 
-   inputs: x variable,  y variable (a list of lists), alpha transparency, labels, palette colour, 
-                title, x labels, y labels and legend title. 
-   output: a matplotlib object
+   **inputs:** x variable,  y variable (a list of lists), transparency, labels of each y variable, palette colour, title, x labels, y labels and legend title.    
+   **output:** a matplotlib object.  
 
 
 .- `plot_histogram()`:
 
-   - This functions implements a method that makes histograms accesible to people with one of these three colourblind variants; deuteranopia, protanopia or tritanopia. It modifies the colour of each line, the title, legend and axes size, transparancy of the objects as well as the face colour.
+   - This functions implements a method that makes histograms accesible to people with one of these three colourblind variants; deuteranopia, protanopia or tritanopia. It modifies the colour of each line, the title, legend and axes size, transparancy of the objects number of bins,  as well as the face colour.
    
-   inputs: y variable (a list of lists), alpha transparency, labels of , palette colour, 
-                title, x labels, y labels and legend title.
-   output: a matplotlib object
+   **inputs:** y variable (a list of lists), transparency, labels of each y variable, palette colour, title, x labels, y labels and legend title.   
+   **output:** a matplotlib object.
 
 
 for more details please use the the following commands:
@@ -88,34 +85,31 @@ y_list=[[1,2,3,4],[3,5,7,9],[4,7,5,9],[1,4,6,8],[4,6,7,9],[1,3,4,8],[0,4,7,2],[-
 
 **Input**
 
-For the deuteranopia friendly colour palette, it is necessary to use the following commands for a line graph:
+For the *deuteranopia* friendly colour palette, it is necessary to use the following commands for a line graph:
 
 ```
 cb = Colourblind8()
 cb.plot_line(x=x, y=y_list,alpha =1.0, labels =['a','b','c','d','e','f','g','h','i'], palette = 'deutera', title = "Example Line", x_lab = "X" , y_lab = "Y" , legend_title = "Labels" )
 ```
 
-
-For the protanopia friendly colour palette it is necessary to use the following commands for a line graph:
+For the *protanopia* friendly colour palette it is necessary to use the following commands for a line graph:
 ```
 
 cb = Colourblind8()
 cb.plot_line(x=x, y=y_list,alpha =1.0, labels =['a','b','c','d','e','f','g','h','i'], palette = 'prota', title = "Example Line", x_lab = "X" , y_lab = "Y" , legend_title = "Labels" )
 ```
 
-For the tritanopia friendly colour palette it is necessary to use the following commands for a line graph:
+For the *tritanopia* friendly colour palette it is necessary to use the following commands for a line graph:
 ```
 cb = Colourblind8()
 cb.plot_line(x=x, y=y_list,alpha =1.0, labels =['a','b','c','d','e','f','g','h','i'], palette = 'trita', title = "Example Line", x_lab = "X" , y_lab = "Y" , legend_title = "Labels" )
 ```
 
-***Output**
+**Output**
 
-Deutra                    |  Prota                    | Trita                   |        
-:------------------------:|:-------------------------:|:-----------------------:|
-![](img/line_deutra.png)  |  ![](img/line_prota.png) | ![](img/line_trita.png)  |
-
-###### The expected  line output for palettes deutera, prota and trita
+Deutra                    |  Prota                    | Trita                    |        
+:------------------------:|:-------------------------:|:------------------------:|
+![](img/line_deutra.png)  |  ![](img/line_prota.png)  | ![](img/line_trita.png)  |
 
 
 
@@ -131,7 +125,7 @@ y_list=[[1,2,3,4],[3,5,7,9],[4,7,5,9],[1,4,6,8],[4,6,7,9],[1,3,4,8],[0,4,7,2],[-
 
 **Input**
 
-For the deuteranopia friendly colour palette, it is necessary to use the following commands for a scatterplot:
+For the *deuteranopia* friendly colour palette, it is necessary to use the following commands for a scatterplot:
 
 ```
 cb = Colourblind8()
@@ -139,41 +133,44 @@ cb.plot_scatter(x=x, y=y_list,alpha =0.8, labels =['a','b','c','d','e','f','g','
 ```
 
 
-For the protanopia friendly colour palette it is necessary to use the following commands for a scatterplot:
+For the *protanopia* friendly colour palette it is necessary to use the following commands for a scatterplot:
 ```
 
 cb = Colourblind8()
 cb.plot_scatter(x=x, y=y_list,alpha =1.0, labels =['a','b','c','d','e','f','g','h','i'], palette = 'prota', title = "Example Line", x_lab = "X" , y_lab = "Y" , legend_title = "Labels" )
 ```
 
-For the tritanopia friendly colour palette it is necessary to use the following commands for a scatterplot:
+For the *tritanopia* friendly colour palette it is necessary to use the following commands for a scatterplot:
 ```
 cb = Colourblind8()
 cb.plot_scatter(x=x, y=y_list,alpha =1.0, labels =['a','b','c','d','e','f','g','h','i'], palette = 'trita', title = "Example Line", x_lab = "X" , y_lab = "Y" , legend_title = "Labels" )
 ```
 
-***Output**
+**Output**
 
 Deutra                       |  Prota                      | Trita                       |        
 :---------------------------:|:---------------------------:|:---------------------------:|
 ![](img/scatter_deutra.png)  |  ![](img/scatter_prota.png) | ![](img/scatter_trita.png)  |
 
-###### The expected  line output for palettes deutera, prota and trita
 
 
-
-#### `plot_histogram(self, y, alpha = 1.0, labels = None, palette = None, title = None, x_lab = None, legend_title = None)`:
+#### `plot_histogram(self, y, alpha = 1.0, bins= None,  labels = None, palette = None, title = None, x_lab = None, legend_title = None)`:
 
 The test dataset used for this example is the following
 
 ```
-
+test = Colourblind8()
+N = 100
+x = np.random.rand(N)
+y = np.random.rand(N)
+z = np.random.rand(N)
+list_y = [x,y,z]
 
 ```
 
 **Input**
 
-For the deuteranopia friendly colour palette, it is necessary to use the following commands for a scatterplot:
+For the *deuteranopia* friendly colour palette, it is necessary to use the following commands for a scatterplot:
 
 ```
 cb = Colourblind8()
@@ -181,25 +178,24 @@ cb.plot_histogram(y=y_list,alpha =0.8, labels =['a','b','c','d','e','f','g','h',
 ```
 
 
-For the protanopia friendly colour palette it is necessary to use the following commands for a scatterplot:
+For the *protanopia* friendly colour palette it is necessary to use the following commands for a scatterplot:
 ```
 cb = Colourblind8()
 cb.plot_histogram(x=x, y=y_list,alpha =1.0, labels =['a','b','c','d','e','f','g','h','i'], palette = 'prota', title = "Example Histogram", x_lab = "X" , legend_title = "Labels" )
 ```
 
-For the tritanopia friendly colour palette it is necessary to use the following commands for a scatterplot:
+For the *tritanopia* friendly colour palette it is necessary to use the following commands for a scatterplot:
 ```
 cb = Colourblind8()
 cb.plot_histogram(x=x, y=y_list,alpha =1.0, labels =['a','b','c','d','e','f','g','h','i'], palette = 'trita', title = "Example Histogram", x_lab = "X" , legend_title = "Labels" )
 ```
 
-***Output**
+**Output**
 
 Deutra                    |  Prota                    | Trita                   |        
 :------------------------:|:-------------------------:|:-----------------------:|
 ![](img/hist_deutra.png)  |  ![](img/hist_prota.png) | ![](img/hist_trita.png)  |
 
-###### The expected  line output for palettes deutera, prota and trita
 
 
 ### Our Package in the Python Ecosystem 
