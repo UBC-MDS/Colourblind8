@@ -258,7 +258,7 @@ class Colourblind8:
 		if bins:
 			if labels:
 				for idx, values in enumerate(y):
-					values.hist(ax=ax,
+					 ax.hist(values,
 					        edgecolor = 'white',
 					        linewidth=1,
 					        alpha = alpha,
@@ -268,7 +268,7 @@ class Colourblind8:
 				ax.legend(title = legend_title, bbox_to_anchor=(1.01, 1))
 			else:
 				for idx, values in enumerate(y):
-					values.hist(ax = ax,
+					 ax.hist(values,
 					           edgecolor = 'white',
 					           linewidth=1,
 					           alpha = alpha,
@@ -277,7 +277,7 @@ class Colourblind8:
 		else:
 			if labels:
 				for idx, values in enumerate(y):
-					values.hist(ax = ax,
+					 ax.hist(values,
 					        edgecolor = 'white',
 					        linewidth=1,
 					        alpha = alpha,
@@ -286,7 +286,7 @@ class Colourblind8:
 				ax.legend(title = legend_title, bbox_to_anchor=(1.01, 1))
 			else:
 				for idx, values in enumerate(y):
-					values.hist(ax= ax,
+					 ax.hist(values,
 					           edgecolor = 'white',
 					           linewidth=1,
 					           alpha = alpha,
