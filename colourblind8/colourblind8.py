@@ -9,7 +9,6 @@ class Colourblind8:
 
 	Example
 	----------
-
 	Colourblind8.plot_lines(x=x, y=y, alpha=1.0,labels =['a','b','c','d','e','f','g','h','i'], palette = 'deutera',
 		        title = "My testing", x_lab = "X_test", y_lab = "Y_test", legend_title = "lengendtest");
 
@@ -25,9 +24,9 @@ class Colourblind8:
 
 	palette=['deutera','prota','trita']
 
+
 	Parameters
 	----------
-
 	param1 x (list): a list of numeric values. Applicable to scatterplots and lineplots
 	param2 y (list of lists): up to 9 y variables to plot based on the number of available colours per palette. For one list, please convert it to a list of lists.
 	alpha(float): controling transparency level. Default value=1.0 , it takes any value between 0.0 and 1.0.
@@ -53,6 +52,7 @@ class Colourblind8:
 		self.prota_colours = ['#7D7C01', '#59709E', '#4C5631', '#3F59E8', '#BDBB64','#35A9E0', '#E8E602', '#C1C1C7', '#0E1079']
 		self.trita_colours = ['#5F727A', '#FFB7C2', '#01919A', '#A8A8B4', '#BDE6F4','#4A3F45', '#B77B87', '#00585C', '#932929']
 		#Initialize plot design for Colourblind8
+
 		plt.rcParams['axes.titlesize'] = 20
 		plt.rcParams['axes.edgecolor'] = "black"
 		plt.rcParams['legend.fontsize'] = 10
@@ -61,6 +61,7 @@ class Colourblind8:
 		plt.rcParams["axes.labelsize"] = 16
 
 	def plot_lines(self, x, y,alpha=1.0, labels = None, palette = None,title = None, x_lab = None, y_lab = None, legend_title = None):
+
 		"""
 		Colourblind8.plot_lines() produces a matplotlib linechart for x and y variables. It takes y variable only in a list of lists format, up to 9 lists within a list for plotting. Each line will be presented by one colour of the palette. *** For one list, please convert it to a list of a list.
 
@@ -90,6 +91,7 @@ class Colourblind8:
 		"""
 
         # Checks which colour palette is selected
+
 		if palette == 'deutera':
 			colours = self.deutera_colours
 		elif palette == 'trita':
@@ -100,6 +102,7 @@ class Colourblind8:
 		fig, ax = plt.subplots()
 
 		# Go through y variables and apply colours accordingly
+
 		if labels:
 			for idx, values in enumerate(y):
 				ax.plot(x,
@@ -134,7 +137,6 @@ class Colourblind8:
 
 		Example
 		---------
-
 			Colourblind8.plot_scatter(x=x, y=y, alpha=0.5,labels =['a','b','c','d','e','f','g','h','i'], palette = 'deutera',
 					            title = "My testing", x_lab = "X_test", y_lab = "Y_test", legend_title = "lengendtest")
 
@@ -229,7 +231,7 @@ class Colourblind8:
 		"""
 		# Checks colour palette
 		if palette == 'deutera':
-			colours = self.s
+			colours = self.deutera_colours
 		elif palette == 'trita':
 			colours = self.trita_colours
 		elif palette == 'prota':
@@ -250,21 +252,18 @@ class Colourblind8:
 
 				for idx, values in enumerate(y):
 					ax.hist(values,
+
 					        edgecolor = 'white',
 					        linewidth=1,
 					        alpha = alpha,
 					        color = colours[idx],
 					        label = labels[idx],
+
 							bins = range(min(store_min),max(stored_max)))
 				ax.legend(title = legend_title, bbox_to_anchor=(1.01, 1))
 			else:
 				for idx, values in enumerate(y):
-					ax.hist(values,
-					           edgecolor = 'white',
-					           linewidth=1,
-					           alpha = alpha,
-					           color = colours[idx],
-							   bins =  range(min(store_min),max(stored_max)))
+					ax.hist(values, edgecolor = 'white', linewidth=1, alpha = alpha, color = colours[idx], bins =  range(min(store_min), max(stored_max)))
 		else:
 			if labels:
 				for idx, values in enumerate(y):
@@ -282,7 +281,6 @@ class Colourblind8:
 					           linewidth=1,
 					           alpha = alpha,
 					           color = colours[idx])
-
 
 		# if the following parameters are entered, Colourblind8 will apply the theme
 		if title:
