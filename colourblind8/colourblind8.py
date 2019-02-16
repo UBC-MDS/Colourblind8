@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 
 class Colourblind8:
+
 	""" What is Colourblind8?
     
     Colourblind8 provides an improved version of matplotlib scatterplot,lineplot and histogram through colour and design enhancement for three types of colourblind conditions -Deuteranopia,Protanopia,Tritanopia.
@@ -44,7 +45,6 @@ class Colourblind8:
     """
 	
     def __init__(self):
-		
 		"""
         Initialize colour palette and plot settings for Colourblind8. 
         """
@@ -69,7 +69,7 @@ class Colourblind8:
 	def plot_lines(self, x, y,alpha=1.0, labels = None, palette = None, 
                 title = None, x_lab = None, y_lab = None, legend_title = None):
     
-        """
+		"""
         Colourblind8.plot_lines() produces a matplotlib linechart for x and y variables. It takes y variable only in a list of lists format, up to 9 lists within a list for plotting. Each line will be presented by one colour of the palette. *** For one list, please convert it to a list of a list. 
         
         Example
@@ -238,7 +238,6 @@ class Colourblind8:
 		an enhanced version of matplotlib histogram is returned
             
         """
-    
         # Checks colour palette
         if palette == 'deutera':
                 colours = self.deutera_colours
