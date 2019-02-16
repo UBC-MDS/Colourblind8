@@ -259,11 +259,11 @@ class Colourblind8:
 					        color = colours[idx],
 					        label = labels[idx],
 
-							bins = range(min(stored_min),max(stored_max)))
+							bins = range(as.int(min(stored_min)),as.int(max(stored_max))))
 				ax.legend(title = legend_title, bbox_to_anchor=(1.01, 1))
 			else:
 				for idx, values in enumerate(y):
-					ax.hist(values, edgecolor = 'white', linewidth=1, alpha = alpha, color = colours[idx], bins =  range(min(stored_min), max(stored_max)))
+					ax.hist(values, edgecolor = 'white', linewidth=1, alpha = alpha, color = colours[idx], bins =  range(as.int(min(stored_min)),as.int( max(stored_max))))
 		else:
 			if labels:
 				for idx, values in enumerate(y):
