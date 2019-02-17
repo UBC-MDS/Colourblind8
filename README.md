@@ -7,8 +7,8 @@ A python package that creates colourblind friendly plots.
 
 ### Authors
 
-[Ian Flores](https://github.com/ian-flores) | [Sabrina Tse](https://github.com/sabrinatkk) | [Hayley Boyce](https://github.com/hfboyce)|
-------------:|:--------------:|:--------------:|
+| [Ian Flores](https://github.com/ian-flores) | [Sabrina Tse](https://github.com/sabrinatkk) | [Hayley Boyce](https://github.com/hfboyce)|
+|:------------:|:--------------:|:--------------:|
 
 ### Project
 
