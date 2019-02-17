@@ -36,7 +36,7 @@ In this package, three functions are included to make `matplotlib`plots more int
 
 - `plot_scatter(x, y, alpha = 1.0, labels = None, palette = None, title = None, x_lab = None, y_lab = None, legend_title = None)`:
 
-  - This function implements a method that creates scatterplots by initializing the colour of lines, the face colour of the chart, the transparency of objects, and the font size for title, legend and axes.
+  - This function implements a method that creates scatterplots by initializing the colour of data points, the face colour of the chart, the transparency of objects, and the font size for title, legend and axes.
 
    **Inputs:** x variable,  y variable (a list of lists), transparency, labels of each y variable, palette colour, title, x labels, y labels and legend title.    
    **Output:** a matplotlib scatterplot object.
@@ -94,7 +94,7 @@ Three colour palettes are available : `deutera`,`prota`,`trita`
 
 ### Sample Graphs
 
-#### Line Graph: 
+#### Line Graph:
 
 #####  Input
 data:
