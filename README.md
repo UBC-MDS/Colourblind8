@@ -28,18 +28,18 @@ In this package, three functions are included to make `matplotlib`plots more int
 
 - `plot_lines()`:
 
-  - This function implements a method that enhances line graphs through modifying the colour of lines, the face colour of the chart, the transparency of objects, and the font size for title, legend and axes.
+  - This function implements a method that creates line graphs by initializing the colour of lines, the face colour of the chart, the transparency of objects, and the font size for title, legend and axes.
 
    **inputs:** x variable,  y variable (a list of lists), transparency, labels of each y variable, palette colour, title, x labels, y labels and legend title.    
-   **output:** a matplotlib line graph  
+   **output:** a matplotlib line graph object.  
 
 
 - `plot_scatter()`:
 
-  - This function implements a method that enhances scatterplots through modifying the colour of points, the face colour of the chart, the transparency of objects, and the font size for title, legend and axes.
+  - This function implements a method that creates scatterplots by initializing the colour of lines, the face colour of the chart, the transparency of objects, and the font size for title, legend and axes.
 
    **inputs:** x variable,  y variable (a list of lists), transparency, labels of each y variable, palette colour, title, x labels, y labels and legend title.    
-   **output:** a matplotlib scatterplot.
+   **output:** a matplotlib scatterplot object.
 
 
 - `plot_histogram()`:
@@ -47,7 +47,7 @@ In this package, three functions are included to make `matplotlib`plots more int
    - This functions implements a method that enhances histograms through modifying the colour of histogram layers, the face colour of the chart, the transparency of objects, and the font size for title, legend and axes.
 
    **inputs:** y variable (a list of lists), transparency, labels of each y variable, palette colour, title, x labels, y labels and legend title.   
-   **output:** a matplotlib object.
+   **output:** a matplotlib histogram object.
 
 
 For more details, please use the following commands:
@@ -71,7 +71,7 @@ To upgrade to the latest version, use:
 
 Please note, for a more clear execution of our package, Varada Kolhatkar (UBC MDS instructor) suggested an additional document (jupyter notebook) to demonstrate how to use our package with a test dataset, along with our tests being passed. She found this a more beneficial method of visually comparing the output with the test cases.
 
-The demonstration can be found in the `Example` folder of this repository named [sample_usage.ipynb](https://github.com/UBC-MDS/Colourblind8/blob/master/example/Sample.ipynb).
+The demonstration can be found in the `example` folder of this repository named [sample_usage.ipynb](https://github.com/UBC-MDS/Colourblind8/blob/master/example/sample_usage.ipynb).
 
 
 ##### Step by step guide
@@ -80,14 +80,15 @@ The demonstration can be found in the `Example` folder of this repository named 
 
 ```
 import matplotlib.pyplot as plt
-from colourblind8.colourblind8 import Colourblind8
-cb = Colourblind8() #initialize
+from colourblind8.colourblind8 import Colourblind8()
 ```
 2. Select one of the available Colourblind8 graphs and one of our customized colour palettes for data visualization. We picked `plot_lines()` and `palette = "trita"` as an example:
 
-`cb.plot_lines(self, x, y, alpha = 1.0, labels = None, palette = "trita", title = None, x_lab = None, y_lab = None, legend_title = None)`
+```
+cb = Colourblind8()
+cb.plot_lines(self, x, y, alpha = 1.0, labels = None, palette = "trita", title = None, x_lab = None, y_lab = None, legend_title = None)
+```
 
-Three graph choices are available: `plot_line()`,`plot_scatter()`,`plot_histogram()`
 Three colour palettes are available : `deutera`,`prota`,`trita`
 
 
@@ -100,9 +101,10 @@ x=[1,2,3,4]
 
 y_list=[[1,2,3,4],[3,5,7,9],[4,7,5,9],[1,4,6,8],[4,6,7,9],[1,3,4,8],[0,4,7,2],[-1,4,7,-7],[9,7,5,3]]
 ```
-code:
+
 
 ```
+cb=Colourblind8()
 cb.plot_lines(self, x, y, alpha = 1.0, labels = None, palette = "trita", title = None, x_lab = None, y_lab = None, legend_title = None)
 ```
 ###### Line Graph's output (colour palettes' presentation)
@@ -132,9 +134,10 @@ for i in range(9):
     y = np.random.rand(N)
     y_list.append(y)
 ```
-code:
+
 
 ```
+cb = Colourblind8()
 cb.plot_scatter(x=x, y=y_list,alpha =0.8, labels =['a','b','c','d','e','f','g','h','i'], palette = 'deutera', title = "Example Line", x_lab = "X" , y_lab = "Y" , legend_title = "Labels" )
 ```
 
@@ -155,9 +158,10 @@ y = np.random.rand(N)
 z = np.random.rand(N)
 list_y = [x,y,z]
 ```
-code:
+
 
 ```
+cb = Colourblind8()
 cb.plot_histogram(y=y_list,alpha =0.8, labels =['a','b','c','d','e','f','g','h','i'], palette = 'deutera', title = "Example Histogram", x_lab = "X" , legend_title = "Labels" )
 ```
 
