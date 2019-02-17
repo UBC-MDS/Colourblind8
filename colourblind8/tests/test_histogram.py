@@ -32,35 +32,26 @@ def test_input_values():
     '''tests input parameters are correct sizes'''
     with pytest.raises(ValueError):
 
-        # Expect ERROR if the length of two vectors are different
-        cb.plot_lines(x,y_wrong_size,alpha =1.0,
-              labels =['a','b','c','d','e','f','g','h','i'],
-              palette = 'deutera',
-              title = "Deutera Line Example",
-              x_lab = "X label" ,
-              y_lab = "Y label" ,
-              legend_title = "Legend")
-
         #Expect ERROR if alpha is outside range
-        cb.plot_lines(nonlist_x,y_list,alpha =5.0,
+        cb.plot_histogram(y_list, alpha =5.0,bins = 10,
               labels =['a','b','c','d','e','f','g','h','i'],
               palette = 'deutera',
               title = "Deutera Line Example",
               x_lab = "X label" ,
-              y_lab = "Y label" ,
               legend_title = "Legend")
 
-
-def test_input_index():
-    '''tests input parameters are consistent lengths'''
-    with pytest.raises(IndexError):
-        #Expect ERROR if labels length is inconsistent with y length
-        cb.plot_scatter(x,y_list,alpha =1.0,
-              labels =['a','b'],
+        cb.plot_histogram(y_list, alpha =5.0,bins = 0.3,
+              labels =['a','b','c','d','e','f','g','h','i'],
               palette = 'deutera',
               title = "Deutera Line Example",
               x_lab = "X label" ,
-              y_lab = "Y label" ,
+              legend_title = "Legend")
+
+        cb.plot_histogram(y_list, alpha =1.0, bins ="10",
+              labels =['a','b','c','d','e','f','g','h','i'],
+              palette = 'deutera',
+              title = "Deutera Line Example",
+              x_lab = "X label" ,
               legend_title = "Legend")
 
 
@@ -69,20 +60,11 @@ def test_input_types():
     with pytest.raises(TypeError):
 
         # Expect ERROR if any of the parameters are not expected type
-        cb.plot_scatter(x,nonlist_y,alpha =1.0,
+        cb.plot_histogram(y_wrong_size, alpha = [1.0], bins =10,
               labels =['a','b','c','d','e','f','g','h','i'],
               palette = 'deutera',
               title = "Deutera Line Example",
               x_lab = "X label" ,
-              y_lab = "Y label" ,
-              legend_title = "Legend")
-
-        cb.plot_scatter(nonlist_x,y_list,alpha ="1.0",
-              labels =['a','b','c','d','e','f','g','h','i'],
-              palette = 'deutera',
-              title = "Deutera Line Example",
-              x_lab = "X label" ,
-              y_lab = "Y label" ,
               legend_title = "Legend")
 
 ## Testing Function Output
@@ -91,28 +73,27 @@ def test_num_geoms():
     '''A function that checks that the functions returns the correct number of
        geom objects given an input.
     '''
-    scatter_plot = cb.plot_scatter(x, y_list, palette = 'deutera')
-    num_geoms = scatter_plot.get_children()
-    assert len(num_geoms) == 19
+    hist_plot = cb.plot_histogram(y_list, palette = 'deutera')
+    num_geoms = hist_plot.get_children()
+    assert len(num_geoms) == 100
 
 def test_labels():
     '''A function that checks that the functions returns the correct labels'''
-    scatter_plot = cb.plot_scatter(x, y_list,
+    hist_plot = cb.plot_histogram(y_list,
     palette = 'deutera',
     x_lab = 'axis_x',
-    y_lab = 'axis_y',
     title = 'axis_title')
 
-    assert scatter_plot.get_xlabel() == 'axis_x'
-    assert scatter_plot.get_ylabel() == 'axis_y'
-    assert scatter_plot.get_title() == 'axis_title'
+    assert hist_plot.get_xlabel() == 'axis_x'
+    assert hist_plot.get_ylabel() == 'Frequency'
+    assert hist_plot.get_title() == 'axis_title'
 
 def test_legend():
     '''A function that checks that the legend assignment inside the function works'''
-    scatter_plot = cb.plot_scatter(x,
+    hist_plot = cb.plot_histogram(
     y_list,
     palette = 'deutera',
     labels = ['1', '2', '3', '4', '5', '6', '7', '8', '9'])
-    class_legend = str(type(scatter_plot.get_legend()))
+    class_legend = str(type(hist_plot.get_legend()))
 
     assert class_legend == "<class 'matplotlib.legend.Legend'>"
