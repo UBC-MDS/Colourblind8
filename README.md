@@ -28,7 +28,7 @@ In this package, three functions are included to make `matplotlib`plots more int
 
 - `plot_lines()`:
 
-  - This function implements a method that enhance line graphs through modifying the colour of lines, the face colour of the chart, the transparency of objects, and the font size for title, legend and axes.
+  - This function implements a method that enhances line graphs through modifying the colour of lines, the face colour of the chart, the transparency of objects, and the font size for title, legend and axes.
 
    **inputs:** x variable,  y variable (a list of lists), transparency, labels of each y variable, palette colour, title, x labels, y labels and legend title.    
    **output:** a matplotlib line graph  
