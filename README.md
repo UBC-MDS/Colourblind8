@@ -194,7 +194,7 @@ cb.plot_histogram(x=x, y=y_list,alpha =1.0, labels =['a','b','c','d','e','f','g'
 
 Deutra                    |  Prota                    | Trita                   |        
 :------------------------:|:-------------------------:|:-----------------------:|
-![](img/hist_deutra.png)  |  ![](img/hist_prota.png) | ![](img/hist_trita.png)  |
+![](img/histogram_deutra.png)  |  ![](img/histogram_prota.png) | ![](img/histogram_trita.png)  |
 
 
 
