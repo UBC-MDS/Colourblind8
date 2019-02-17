@@ -66,6 +66,23 @@ def test_input_types():
               title = "Deutera Line Example",
               x_lab = "X label" ,
               legend_title = "Legend")
+        
+def test_input(y,alpha,bins, labels, palette, title, x_lab, legend_title):
+    '''tests input parameters are correct types and in correct range '''
+    
+    
+    assert type(y) == list
+    assert type(labels) == list
+    assert type(bins) == int 
+    assert type(palette) == str
+    assert type(title) == str
+    assert type(x_lab) == str
+    assert type(legend_title) == str
+    assert type(alpha) == float
+    assert alpha <= 1.0
+    assert alpha >= 0.0
+    assert len(y) == len(labels)
+    assert bins > 0
 
 ## Testing Function Output
 
