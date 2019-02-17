@@ -109,7 +109,7 @@ cb.plot_lines(x, y_list, alpha =1.0, labels =['a','b','c','d','e','f','g','h','i
 ```
 #####  Output (colour palettes' presentation)
 
-Deutra                    |  Prota                    | Trita                    |        
+deutera                    |  Prota                    | Trita                    |        
 :------------------------:|:-------------------------:|:------------------------:|
 ![](img/line_deutra.png)  |  ![](img/line_prota.png)  | ![](img/line_trita.png)  |
 
@@ -144,7 +144,7 @@ cb.plot_scatter(x, y_list, alpha =1.0, labels =['a','b','c','d','e','f','g','h',
 
 ##### Output (colour palettes' presentation)
 
-Deutra                       |  Prota                      | Trita                       |        
+deutera                       |  Prota                      | Trita                       |        
 :---------------------------:|:---------------------------:|:---------------------------:|
 ![](img/scatter_deutra.png)  |  ![](img/scatter_prota.png) | ![](img/scatter_trita.png)  |
 
@@ -169,7 +169,7 @@ cb.plot_histogram(y = list_y, palette= 'prota', x_lab=' X Label', title = 'Deute
 ###### Output (colour palettes' presentation)
 
 
-Deutra                    |  Prota                    | Trita                   |        
+deutera                    |  Prota                    | Trita                   |        
 :------------------------:|:-------------------------:|:-----------------------:|
 ![](img/histogram_deutra.png)  |  ![](img/histogram_prota.png) | ![](img/histogram_trita.png)  |
 
