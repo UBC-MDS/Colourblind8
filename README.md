@@ -26,28 +26,28 @@ At this stage, `Colourblind8` will focus on developing settings for the three mo
 
 In this package, three functions are included to make `matplotlib`plots more interpretable for people with protanopia, deuteranopia and tritanopia. Within each function, users can select one of our customized colour palettes via the `palette` argument according to their preference: `deutera` for deuteranopia,`prota` for protanopia ,`trita`for tritanopia. The following are our main functions:
 
-- `plot_lines()`:
+- `plot_lines(x, y, alpha = 1.0, labels = None, palette = None, title = None, x_lab = None, y_lab = None, legend_title = None)`:
 
   - This function implements a method that creates line graphs by initializing the colour of lines, the face colour of the chart, the transparency of objects, and the font size for title, legend and axes.
 
-   **inputs:** x variable,  y variable (a list of lists), transparency, labels of each y variable, palette colour, title, x labels, y labels and legend title.    
-   **output:** a matplotlib line graph object.  
+   **Inputs:** x variable,  y variable (a list of lists), transparency, labels of each y variable, palette colour, title, x labels, y labels and legend title.    
+   **Output:** a matplotlib line graph object.  
 
 
-- `plot_scatter()`:
+- `plot_scatter(x, y, alpha = 1.0, labels = None, palette = None, title = None, x_lab = None, y_lab = None, legend_title = None)`:
 
   - This function implements a method that creates scatterplots by initializing the colour of lines, the face colour of the chart, the transparency of objects, and the font size for title, legend and axes.
 
-   **inputs:** x variable,  y variable (a list of lists), transparency, labels of each y variable, palette colour, title, x labels, y labels and legend title.    
-   **output:** a matplotlib scatterplot object.
+   **Inputs:** x variable,  y variable (a list of lists), transparency, labels of each y variable, palette colour, title, x labels, y labels and legend title.    
+   **Output:** a matplotlib scatterplot object.
 
 
-- `plot_histogram()`:
+- `plot_histogram(y, alpha = 1.0, bins = None, labels = None, palette = None ,title = None, x_lab = None, legend_title = None)`:
 
-   - This functions implements a method that enhances histograms through modifying the colour of histogram layers, the face colour of the chart, the transparency of objects, and the font size for title, legend and axes.
+   - This functions implements a method that enhances histograms through modifying the colour of histogram layers, the face colour of the chart, the transparency of objects,bin size and the font size for title, legend and axes.
 
-   **inputs:** y variable (a list of lists), transparency, labels of each y variable, palette colour, title, x labels, y labels and legend title.   
-   **output:** a matplotlib histogram object.
+   **Inputs:** y variable (a list of lists), transparency, bin size,  labels of each y variable, palette colour, title, x labels, y labels and legend title.   
+   **Output:** a matplotlib histogram object.
 
 
 For more details, please use the following commands:
@@ -86,35 +86,36 @@ from colourblind8.colourblind8 import Colourblind8()
 
 ```
 cb = Colourblind8()
-cb.plot_lines(self, x, y, alpha = 1.0, labels = None, palette = "trita", title = None, x_lab = None, y_lab = None, legend_title = None)
+cb.plot_lines(x, y, alpha = 1.0, labels = None, palette = "trita", title = None, x_lab = None, y_lab = None, legend_title = None)
 ```
 
 Three colour palettes are available : `deutera`,`prota`,`trita`
 
 
-##### Sample input and output
+### Sample Graphs
 
-###### Line Graph's input
+#### Line Graph: 
+
+#####  Input
 data:
 ```
 x=[1,2,3,4]
 
 y_list=[[1,2,3,4],[3,5,7,9],[4,7,5,9],[1,4,6,8],[4,6,7,9],[1,3,4,8],[0,4,7,2],[-1,4,7,-7],[9,7,5,3]]
 ```
-
-
 ```
 cb=Colourblind8()
-cb.plot_lines(self, x, y, alpha = 1.0, labels = None, palette = "trita", title = None, x_lab = None, y_lab = None, legend_title = None)
+cb.plot_lines(x, y_list, alpha =1.0, labels =['a','b','c','d','e','f','g','h','i'], palette = 'trita', title = "Trita Line Example", x_lab = "X label",  y_lab = "Y label", legend_title = "Legend")
 ```
-###### Line Graph's output (colour palettes' presentation)
+#####  Output (colour palettes' presentation)
 
-Deutra                    |  Prota                    | Trita                    |        
+deutera                    |  Prota                    | Trita                    |        
 :------------------------:|:-------------------------:|:------------------------:|
 ![](img/line_deutra.png)  |  ![](img/line_prota.png)  | ![](img/line_trita.png)  |
 
+#### Scatterplot Graph
 
-###### Scatterplot's input
+##### Input
 data:
 ```
 N = 10
@@ -138,18 +139,19 @@ for i in range(9):
 
 ```
 cb = Colourblind8()
-cb.plot_scatter(x=x, y=y_list,alpha =0.8, labels =['a','b','c','d','e','f','g','h','i'], palette = 'deutera', title = "Example Line", x_lab = "X" , y_lab = "Y" , legend_title = "Labels" )
+cb.plot_scatter(x, y_list, alpha =1.0, labels =['a','b','c','d','e','f','g','h','i'], palette = 'deutera', title = "Deutera scatterplot Example", x_lab = "X label",  y_lab = "Y label", legend_title = "Legend" )
 ```
 
-###### Scatterplot's output (colour palettes' presentation)
+##### Output (colour palettes' presentation)
 
-Deutra                       |  Prota                      | Trita                       |        
+deutera                       |  Prota                      | Trita                       |        
 :---------------------------:|:---------------------------:|:---------------------------:|
 ![](img/scatter_deutra.png)  |  ![](img/scatter_prota.png) | ![](img/scatter_trita.png)  |
 
 
+#### Histogram Graph
 
-###### Histogram's input
+##### Input
 data:
 ```
 N = 100
@@ -159,16 +161,15 @@ z = np.random.rand(N)
 list_y = [x,y,z]
 ```
 
-
 ```
 cb = Colourblind8()
-cb.plot_histogram(y=y_list,alpha =0.8, labels =['a','b','c','d','e','f','g','h','i'], palette = 'deutera', title = "Example Histogram", x_lab = "X" , legend_title = "Labels" )
+cb.plot_histogram(y = list_y, palette= 'prota', x_lab=' X Label', title = 'Deutera Histogram Example', alpha = 0.5, bins =10, labels=['c', 'b', "c"], legend_title="legend")
 ```
 
-###### Histogram's output (colour palettes' presentation)
+###### Output (colour palettes' presentation)
 
 
-Deutra                    |  Prota                    | Trita                   |        
+deutera                    |  Prota                    | Trita                   |        
 :------------------------:|:-------------------------:|:-----------------------:|
 ![](img/histogram_deutra.png)  |  ![](img/histogram_prota.png) | ![](img/histogram_trita.png)  |
 
