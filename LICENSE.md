@@ -1,4 +1,4 @@
-MIT License
+# MIT License
 
 Copyright (c) 2019 Hayley Boyce, Ian Flores, Sabrina Tse
 
