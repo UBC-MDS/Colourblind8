@@ -176,11 +176,7 @@ deutera                    |  Prota                    | Trita                  
 
 ### Control Flow Diagram
 
-As we are committed to support open source, we provide the complete `Colourblind8` Control Flow Diagram for each function in our package for users who are interested in the backend workflow:
-
-![plot_lines() Control Flow Diagram](branch_coverage/Colourblind8_control_flow_dia_plotlines.png)
-![plot_scatter() Control Flow Diagram](branch_coverage/Colourblind8_control_flow_dia_plotscatter.png)
-![plot_histogram() Control Flow Diagram](branch_coverage/Colourblind8_control_flow_dia_plothistogram.png)
+As we are committed to support open source, we provide the complete `Colourblind8` Control Flow Diagram for each function in our package for users who are interested in the backend workflow they can be found in the [branch_coverage](https://github.com/UBC-MDS/Colourblind8/tree/master/branch_coverage) folder. 
 
 
 **Branch Coverage Testing**
