@@ -174,6 +174,16 @@ deutera                    |  Prota                    | Trita                  
 ![](img/histogram_deutra.png)  |  ![](img/histogram_prota.png) | ![](img/histogram_trita.png)  |
 
 
+### Control Flow Diagram
+
+As we are committed to support open source, we provide the complete `Colourblind8` Control Flow Diagram for each function in our package for users who are interested in the backend workflow they can be found in the [branch_coverage](https://github.com/UBC-MDS/Colourblind8/tree/master/branch_coverage) folder. 
+
+
+**Branch Coverage Testing**
+
+(waiting for instruction from instructor on whether to use coverage.py or manual testing)
+
+
 
 ### Our Package in the Python Ecosystem
 
