@@ -173,6 +173,17 @@ deutera                    |  Prota                    | Trita                  
 :------------------------:|:-------------------------:|:-----------------------:|
 ![](img/histogram_deutra.png)  |  ![](img/histogram_prota.png) | ![](img/histogram_trita.png)  |
 
+### Control Flow Diagram
+As we are committed to support open source, we provide the complete Colourblind8 Control Flow Diagram for each function from our package for users who are interested in the backend workflow.
+
+![plot_lines() Control Flow Diagram](branch_coverage/Colourblind8_control_flow_dia_plotlines.png)
+![plot_scatter() Control Flow Diagram](branch_coverage/Colourblind8_control_flow_dia_plotscatter.png)
+![plot_histogram() Control Flow Diagram](branch_coverage/Colourblind8_control_flow_dia_plothistogram.png)
+
+**Branch Coverage Testing**
+
+
+(waiting for instructor's response on whether to use coverage.py or manual test)
 
 
 ### Our Package in the Python Ecosystem
