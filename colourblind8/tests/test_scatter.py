@@ -1,7 +1,7 @@
 import pytest
 import matplotlib.pyplot as plt
 import numpy as np
-from colourblind8.colourblind8 import Colourblind8
+from Colourblind8.Colourblind8 import Colourblind8
 
 # The following tests work for all three themes as these tests are scanning through the elements within the themes
 # but the framework of three themes remain the same.
