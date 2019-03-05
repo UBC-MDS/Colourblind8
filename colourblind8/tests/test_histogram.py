@@ -1,7 +1,7 @@
 import pytest
 import matplotlib.pyplot as plt
 import numpy as np
-from Colourblind8.Colourblind8 import Colourblind8
+from colourblind8.colourblind8 import Colourblind8
 
 # The following tests work for all three themes as these tests are scanning through the elements within the themes
 # but the framework of three themes remain the same.
@@ -26,6 +26,13 @@ y_list=[[1,2,3.3,2.2],
         [8,9,7.8,8.2],
         [9,9.3,9.6,9.2]]
 
+alpha = .4
+bins = 30 
+labels =['a','b','c','d','e','f','g','h','i']
+palette = 'trita' 
+title = 'Test' 
+x_lab = " x  value "
+legend_title = "Legend test "
 
 ## Testing Function Input
 def test_input_values():
@@ -67,11 +74,10 @@ def test_input_types():
               x_lab = "X label" ,
               legend_title = "Legend")
         
-def test_input(y,alpha,bins, labels, palette, title, x_lab, legend_title):
+def test_input( ):
     '''tests input parameters are correct types and in correct range '''
     
-    
-    assert type(y) == list
+    assert type(y_list) == list
     assert type(labels) == list
     assert type(bins) == int 
     assert type(palette) == str
@@ -81,7 +87,7 @@ def test_input(y,alpha,bins, labels, palette, title, x_lab, legend_title):
     assert type(alpha) == float
     assert alpha <= 1.0
     assert alpha >= 0.0
-    assert len(y) == len(labels)
+    assert len(y_list) == len(labels)
     assert bins > 0
 
 ## Testing Function Output
