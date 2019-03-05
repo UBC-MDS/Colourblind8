@@ -16,7 +16,7 @@ A python package that creates colourblind friendly plots.
 
 **Overview**
 
-`Colourblind8` will be a brand new plotting package implemented for `matplotlib` to optimize graphs into a format interpretable by people with colourblindness. Colourblindness, also known as colour vision deficiency, is a condition that affects individuals how they perceive colours visually. According to [colourblindawareness.org](http://www.colourblindawareness.org/colour-blindness/), colourblindness affects 1 in every 12 men and 1 in every 200 women globally. This package is inspired by the fact that people without knowledge about this condition don't know how to make their graphs accessible. Our objective is to enhance data visualization by implementing proper colours so that the graphs are perceived correctly by all readers as intended.
+`Colourblind8` is a brand new plotting package implemented for `matplotlib` to optimize graphs into a format interpretable by people with colourblindness. Colourblindness, also known as colour vision deficiency, is a condition that affects individuals how they perceive colours visually. According to [colourblindawareness.org](http://www.colourblindawareness.org/colour-blindness/), colourblindness affects 1 in every 12 men and 1 in every 200 women globally. This package is inspired by the fact that people without knowledge about this condition don't know how to make their graphs accessible. Our objective is to enhance data visualization by implementing proper colours so that the graphs are perceived correctly by all readers as intended.
 
 **Scope**
 
@@ -175,20 +175,27 @@ deutera                    |  Prota                    | Trita                  
 :------------------------:|:-------------------------:|:-----------------------:|
 ![](img/histogram_deutra.png)  |  ![](img/histogram_prota.png) | ![](img/histogram_trita.png)  |
 
+### Control Flow Diagram
+As we are committed to support open source, we provide the complete Colourblind8 Control Flow Diagram for each function from our package for users who are interested in the backend workflow.
+
+![plot_lines() Control Flow Diagram](branch_coverage/Colourblind8_control_flow_dia_plotlines.png)
+![plot_scatter() Control Flow Diagram](branch_coverage/Colourblind8_control_flow_dia_plotscatter.png)
+![plot_histogram() Control Flow Diagram](branch_coverage/Colourblind8_control_flow_dia_plothistogram.png)
+
+**Branch Coverage Testing**
+
+
+(waiting for instructor's response on whether to use coverage.py or manual test)
 
 ### Control Flow Diagram
 
-As we are committed to support open source, we provide the complete `Colourblind8` Control Flow Diagram for each function in our package for users who are interested in the backend workflow they can be found in the [branch_coverage](https://github.com/UBC-MDS/Colourblind8/tree/master/branch_coverage) folder. 
+As we are committed to support open source, we provide the complete `Colourblind8` Control Flow Diagram for each function in our package for users who are interested in the backend workflow they can be found in the [branch_coverage](https://github.com/UBC-MDS/Colourblind8/tree/master/branch_coverage) folder.
 
 
 **Branch Coverage Testing**
 
 
-In total, 6 tests  were identified for our initial manual testing. We pass all 6  tests for each function and a screenshot in the img file named [tests_results.png](https://github.com/UBC-MDS/Colourblind8/blob/master/img/tests_results.png) is available for your convinience.
-
-
-(waiting for instruction from instructor on whether to use coverage.py or manual testing)
-
+In total, 6 tests  were identified for our initial manual testing. We pass all 6  tests for each function and a screenshot in the img file named [tests_results.png](https://github.com/UBC-MDS/Colourblind8/blob/master/img/tests_results.png) is available for your convenience.
 
 
 ### Our Package in the Python Ecosystem
@@ -223,5 +230,4 @@ The most common colour confusions for tritanopes are light blues with greys, dar
 
 source:http://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/
 
--------------------------------------------------------
-http://www.colourblindawareness.org/colour-blindness/
+------------------------------------------------------
