@@ -3,6 +3,8 @@
 
 # Colourblind8
 
+[![Build Status](https://travis-ci.org/UBC-MDS/Colourblind8.svg?branch=master)](https://travis-ci.org/UBC-MDS/Colourblind8)
+
 A python package that creates colourblind friendly plots.
 
 ### Authors
@@ -184,6 +186,20 @@ As we are committed to support open source, we provide the complete Colourblind8
 
 
 (waiting for instructor's response on whether to use coverage.py or manual test)
+
+### Control Flow Diagram
+
+As we are committed to support open source, we provide the complete `Colourblind8` Control Flow Diagram for each function in our package for users who are interested in the backend workflow they can be found in the [branch_coverage](https://github.com/UBC-MDS/Colourblind8/tree/master/branch_coverage) folder. 
+
+
+**Branch Coverage Testing**
+
+
+In total, 6 tests  were identified for our initial manual testing. We pass all 6  tests for each function and a screenshot in the img file named [tests_results.png](https://github.com/UBC-MDS/Colourblind8/blob/master/img/tests_results.png) is available for your convinience.
+
+
+(waiting for instruction from instructor on whether to use coverage.py or manual testing)
+
 
 
 ### Our Package in the Python Ecosystem
