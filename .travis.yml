@@ -1,11 +1,10 @@
 language: python
-	python:
-	  - "3.6"
-	install:
-	  - pip install matplotlib  
-    - pip install -r requirements.txt
-    - pip install -e .
-	script:
-	  - pytest
+python:
+ - "3.6"
+install:
+ - pip install matplotlib  
+ - pip install git+https://github.com/UBC-MDS/Colourblind8
+script:
+ - pytest
 
  
