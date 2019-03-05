@@ -3,6 +3,8 @@
 
 # Colourblind8
 
+[![Build Status](https://travis-ci.org/UBC-MDS/Colourblind8.svg?branch=master)](https://travis-ci.org/UBC-MDS/Colourblind8)
+
 A python package that creates colourblind friendly plots.
 
 ### Authors
