@@ -183,6 +183,10 @@ As we are committed to support open source, we provide the complete `Colourblind
 
 **Branch Coverage Testing**
 
+
+In total, 6 tests  were identified for our initial manual testing. We pass all 6  tests for each function and a screenshot in the img file named [tests_results.png](https://github.com/UBC-MDS/Colourblind8/blob/master/img/tests_results.png) is available for your convinience.
+
+
 (waiting for instruction from instructor on whether to use coverage.py or manual testing)
 
 
