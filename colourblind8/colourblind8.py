@@ -103,20 +103,31 @@ class Colourblind8:
 
 		# Go through y variables and apply colours accordingly
 
-		if labels:
-			for idx, values in enumerate(y):
-				ax.plot(x,
-				          values,
-				          color = colours[idx],
-				          label = labels[idx],
-					   alpha=alpha)
-			ax.legend(title = legend_title, bbox_to_anchor=(1.01, 1))
-		else:
-			for idx, values in enumerate(y):
-				ax.plot(x,
-				           values,
-				           color = colours[idx],
-						alpha=alpha)
+		try:
+			if labels:
+				for idx, values in enumerate(y):
+					ax.plot(x,
+					          values,
+					          color = colours[idx],
+					          label = labels[idx],
+						   alpha=alpha)
+				ax.legend(title = legend_title, bbox_to_anchor=(1.01, 1))
+			else:
+				for idx, values in enumerate(y):
+					ax.plot(x,
+					           values,
+					           color = colours[idx],
+							alpha=alpha)
+		except ValueError:
+			print('The inputs need to have the same dimensions for the function')
+			raise
+		except TypeError:
+			print('X needs to be a list \n Y needs to be a list of lists \n')
+			print('alpha needs to be a numeric')
+			raise
+		except IndexError:
+			print('labels need to have the same length as the number of lists in y')
+			raise
 
 		# if the following parameters are entered, Colourblind8 will apply the theme
 		if title:
@@ -173,20 +184,33 @@ class Colourblind8:
 
 		# Go through y variables and apply colours accordingly
 
-		if labels:
-			for idx, values in enumerate(y):
-				ax.scatter(x,
-				          values,
-				          color = colours[idx],
-				          alpha = alpha,
-				          label = labels[idx])
-			ax.legend(title = legend_title, bbox_to_anchor=(1.01, 1))
-		else:
-			for idx, values in enumerate(y):
-				ax.scatter(x,
-				           values,
-				           color = colours[idx],
-				           alpha = alpha)
+		try:
+			if labels:
+				for idx, values in enumerate(y):
+					ax.scatter(x,
+					          values,
+					          color = colours[idx],
+					          alpha = alpha,
+					          label = labels[idx])
+				ax.legend(title = legend_title, bbox_to_anchor=(1.01, 1))
+			else:
+				for idx, values in enumerate(y):
+					ax.scatter(x,
+					           values,
+					           color = colours[idx],
+					           alpha = alpha)
+
+		except ValueError:
+			print('The inputs need to have the same dimensions for the function')
+			raise
+		except TypeError:
+			print('X needs to be a list \n Y needs to be a list of lists \n')
+			print('alpha needs to be a numeric')
+			raise
+		except IndexError:
+			print('labels need to have the same length as the number of lists in y')
+			raise
+
 		# if the following parameters are entered, Colourblind8 will apply the theme
 		if title:
 			ax.set_title(title)
@@ -241,38 +265,50 @@ class Colourblind8:
 
 		# Go through y variables and apply colours accordingly
 
-		if bins:
-			if labels:
+		try:
+			if bins:
+				if labels:
 
-				for idx, values in enumerate(y):
-					ax.hist(values,
-					        edgecolor = 'white',
-					        linewidth=1,
-					        alpha = alpha,
-					        color = colours[idx],
-					        label = labels[idx],
-							bins = bins)
-				ax.legend(title = legend_title, bbox_to_anchor=(1.01, 1))
+					for idx, values in enumerate(y):
+						ax.hist(values,
+						        edgecolor = 'white',
+						        linewidth=1,
+						        alpha = alpha,
+						        color = colours[idx],
+						        label = labels[idx],
+								bins = bins)
+					ax.legend(title = legend_title, bbox_to_anchor=(1.01, 1))
+				else:
+					for idx, values in enumerate(y):
+						ax.hist(values, edgecolor = 'white', linewidth=1, alpha = alpha, color = colours[idx], bins =bins)
 			else:
-				for idx, values in enumerate(y):
-					ax.hist(values, edgecolor = 'white', linewidth=1, alpha = alpha, color = colours[idx], bins =bins)
-		else:
-			if labels:
-				for idx, values in enumerate(y):
-					ax.hist(values,
-					        edgecolor = 'white',
-					        linewidth=1,
-					        alpha = alpha,
-					        color = colours[idx],
-					        label = labels[idx])
-				ax.legend(title = legend_title, bbox_to_anchor=(1.01, 1))
-			else:
-				for idx, values in enumerate(y):
-					ax.hist(values,
-					           edgecolor = 'white',
-					           linewidth=1,
-					           alpha = alpha,
-					           color = colours[idx])
+				if labels:
+					for idx, values in enumerate(y):
+						ax.hist(values,
+						        edgecolor = 'white',
+						        linewidth=1,
+						        alpha = alpha,
+						        color = colours[idx],
+						        label = labels[idx])
+					ax.legend(title = legend_title, bbox_to_anchor=(1.01, 1))
+				else:
+					for idx, values in enumerate(y):
+						ax.hist(values,
+						           edgecolor = 'white',
+						           linewidth=1,
+						           alpha = alpha,
+						           color = colours[idx])
+								   
+		except ValueError:
+			print('The inputs need to have the same dimensions for the function')
+			raise
+		except TypeError:
+			print('X needs to be a list \n Y needs to be a list of lists \n')
+			print('alpha needs to be a numeric')
+			raise
+		except IndexError:
+			print('labels need to have the same length as the number of lists in y')
+			raise
 
 		# if the following parameters are entered, Colourblind8 will apply the theme
 		if title:
